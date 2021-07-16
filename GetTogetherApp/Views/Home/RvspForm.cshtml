@@ -1,0 +1,44 @@
+﻿@model GetTogetherApp.Models.ResponseModel
+ 
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="section-title">RVSP FORM</h2>
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="form">
+                        <div id="errormessage"></div>
+                        <form method="post" asp-action="RvspForm" role="form" class="contactForm">
+                            <div class="form-group">
+                                <input type="text" asp-for="@Model.Name" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" asp-for="@Model.Email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" asp-for="@Model.Phone"  id="subject" placeholder="Your Phone No."/>
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" asp-for="@Model.WillAttend">
+                                    <option value="">Choose an options..</option>
+                                    <option value="true">Yes</option>
+                                    <option value="false">No</option>
+                                </select>
+                                <div class="validation"></div>
+                            </div>
+                            <div asp-validation-summary="All"></div>
+                            <div class="text-center"><button type="submit">Submit</button></div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</section>

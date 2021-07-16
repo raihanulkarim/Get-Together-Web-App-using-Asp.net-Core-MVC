@@ -1,0 +1,25 @@
+﻿@model GetTogetherApp.Models.ResponseModel
+
+<section class="about" id="about">
+    <div class="container text-center">
+        <h2>
+            Thanks! @Model.Name
+        </h2>
+
+        <p>
+            @if(Model.WillAttend == true)
+            {
+                @: We are glad to hear that you are coming!
+            }
+            else
+            {
+                @: Sorry to hear that, Thanks for letting us know!
+            }
+        </p>
+        <p>
+            To see who is coming<br>
+            <a class="btn btn-full" asp-controller="Home" asp-action="ResponseList">Click Here</a>
+        </p>
+    </div>
+</section>
+<!-- /About -->
